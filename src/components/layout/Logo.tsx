@@ -1,5 +1,5 @@
 import Image from "next/image";
-import LogoImage from "@/assets/logo-leilao-legal.png"
+import LogoImage from "/public/assets/logo-leilao-legal.png"
 
 export default function Logo(){
     return (

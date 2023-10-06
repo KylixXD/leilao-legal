@@ -1,6 +1,7 @@
 import DefaultCarousel from "@/components/Carousel";
 import NavBar from "@/components/layout/header/NavBar";
 import Leiloes from "@/components/layout/card_leiloes/Leiloes";
+import Depoimentos from "@/components/layout/depoimentos/Depoimentos";
 // import Depoimentos from "@/components/layout/depoimentos/Depoimentos";
 
 export default function Home() {
@@ -22,8 +23,7 @@ export default function Home() {
           </div>
         </section>
         <section className="flex items-center">
-          <h1>Depoimentos de vencedores</h1>
-          {/* Aqui vai ficar os depoimentos */}
+          <Depoimentos/>
         </section>
       </main>
     </div>
