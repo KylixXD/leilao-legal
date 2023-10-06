@@ -22,6 +22,7 @@ export default function Home() {
             <Leiloes />
           </div>
         </section>
+        <h1>Alguns depoimentos de vencedores</h1>
         <section className="flex items-center">
           <Depoimentos/>
         </section>
