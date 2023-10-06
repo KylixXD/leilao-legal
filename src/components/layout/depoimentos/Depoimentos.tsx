@@ -21,7 +21,7 @@ export default function Depoimentos() {
           Lucas Bessa
         </h5>
         <span className="text-sm text-gray-500 dark:text-gray-400">
-          Visual Designer
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse hic iure necessitatibus fugiat nisi. Voluptate!
         </span>
       </div>
     </Card>
@@ -38,7 +38,7 @@ export default function Depoimentos() {
           Ozeias Souza
         </h5>
         <span className="text-sm text-gray-500 dark:text-gray-400">
-          Visual Designer
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse hic iure necessitatibus fugiat nisi. Voluptate!
         </span>
       </div>
     </Card>
@@ -55,7 +55,7 @@ export default function Depoimentos() {
           Pedro Vinicius
         </h5>
         <span className="text-sm text-gray-500 dark:text-gray-400">
-          Visual Designer
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse hic iure necessitatibus fugiat nisi. Voluptate!
         </span>
       </div>
     </Card>
