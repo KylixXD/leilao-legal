@@ -9,7 +9,7 @@ export default function Depoimentos() {
   return (
   <div className='mt-20 pb-24 relative grid grid-cols-3 gap-4 pl-32 pr-32'>
      <Card>
-      <div className="flex flex-col items-center pb-10">
+      <div className="flex flex-col items-center pb-10 w-100">
         <Image
           alt="Bessa image"
           className="mb-3 rounded-full shadow-lg"
@@ -21,8 +21,9 @@ export default function Depoimentos() {
           Lucas Bessa
         </h5>
         <span className="text-sm text-gray-500 dark:text-gray-400">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse hic iure necessitatibus fugiat nisi. Voluptate!
+        Fortaleza-CE
         </span>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse hic iure necessitatibus fugiat nisi. Voluptate!</p>
       </div>
     </Card>
     <Card>
@@ -38,8 +39,9 @@ export default function Depoimentos() {
           Ozeias Souza
         </h5>
         <span className="text-sm text-gray-500 dark:text-gray-400">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse hic iure necessitatibus fugiat nisi. Voluptate!
+        Boa Vista - RR
         </span>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse hic iure necessitatibus fugiat nisi. Voluptate!</p>
       </div>
     </Card>
     <Card>
@@ -55,8 +57,9 @@ export default function Depoimentos() {
           Pedro Vinicius
         </h5>
         <span className="text-sm text-gray-500 dark:text-gray-400">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse hic iure necessitatibus fugiat nisi. Voluptate!
+          Mucajaí - RR
         </span>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse hic iure necessitatibus fugiat nisi. Voluptate!</p>
       </div>
     </Card>
   </div>
