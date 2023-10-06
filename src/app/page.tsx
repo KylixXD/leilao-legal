@@ -23,7 +23,7 @@ export default function Home() {
         </section>
         <section className="flex items-center">
           <h1>Depoimentos de vencedores</h1>
-          {/* <Depoimentos/> */}
+          {/* Aqui vai ficar os depoimentos */}
         </section>
       </main>
     </div>
