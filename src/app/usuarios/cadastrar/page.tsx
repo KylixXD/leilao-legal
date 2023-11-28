@@ -7,16 +7,31 @@ import { useRouter } from 'next/navigation';
 
 const Cadastrar = () => {
     const router = useRouter();
+    const [error, setError] = useState('');
+
     const [values, setValues] = useState({
       username: '',
       fullname: '',
       email: '',
       password: '',
       confirmPassword: '',
+      confirmemail:''
     });
   
     const onSubmit = async (event:any) => {
       event.preventDefault();
+
+       // Validação básica
+       if (!values.fullname || !values.username || !values.email || !values.confirmemail || !values.password || !values.confirmPassword) {
+        setError('Todos os campos devem ser preenchidos.');
+        return;
+    }
+
+    if (values.password !== values.confirmPassword) {
+        setError('As senhas não são iguais.');
+        return;
+    }
+    setError('');
   
       // Adicione a lógica de validação aqui, por exemplo, para garantir que as senhas coincidam
   
@@ -34,10 +49,14 @@ const Cadastrar = () => {
         }),
       });
   
-      // Manipule a resposta da API aqui (ex: exiba uma mensagem de sucesso ou erro)
-      const data = await response.json();
-      console.log(data);
-      router.push('/');
+      if (response.ok) {
+        router.push('/');
+    } else {
+        // Manipule erros de resposta da API
+        const data = await response.json();
+        console.error('Erro ao registrar usuário:', data);
+        setError('Erro ao criar conta. Por favor, tente novamente.');
+    }
     };
 
     const handleChange = (event:any) => {
@@ -76,7 +95,7 @@ const Cadastrar = () => {
                 <div className="mb-2 block">
                 <Label htmlFor="confirmemail" value="Confirmar E-mail" />
                 </div>
-                <TextInput id="confirmemail" required type="email" />
+                <TextInput id="confirmemail" required type="email"  onChange={handleChange} value={values.confirmemail}/>
             </div>
             {/* <div>
                 <div className="mb-2 block">
@@ -132,3 +151,4 @@ const Cadastrar = () => {
 }
 
 export default Cadastrar;
+
