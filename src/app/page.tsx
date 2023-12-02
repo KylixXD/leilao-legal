@@ -2,9 +2,15 @@ import DefaultCarousel from "@/components/Carousel";
 import NavBar from "@/components/layout/header/NavBar";
 import Leiloes from "@/components/layout/card_leiloes/Leiloes";
 import Depoimentos from "@/components/layout/depoimentos/Depoimentos";
+import { getServerSession } from "next-auth";
+import { authOptions } from "@/lib/auth";
 // import Depoimentos from "@/components/layout/depoimentos/Depoimentos";
 
-export default function Home() {
+const mainPage = async () => {
+  const session = await getServerSession(authOptions);
+  console.log(session);
+
+
   return (
     <div>
       <main>
@@ -30,3 +36,5 @@ export default function Home() {
     </div>
   );
 }
+
+export default mainPage

@@ -1,12 +1,37 @@
 'use client';
 
 import { Button, Checkbox, Label, TextInput } from 'flowbite-react';
+import { signIn } from 'next-auth/react';
+import { useRouter } from 'next/navigation';
+import { useState } from 'react';
 
+const LoginForm = () => {
+        const router = useRouter();
 
-export default function LoginForm() {
+        const [values, setValues] = useState({
+            email: '',
+            password: '',
+        });
+
+    const onSubmit = async (event:any) => {
+        event.preventDefault();
+
+        const signInData = await signIn('credentials', {
+            email: values.email,
+            password:values.password,
+            redirect: false,
+        });
+
+        if(signInData?.error){
+            console.log(signInData.error);
+        } else {
+            router.push('/');
+        }
+    };
+
   return (
     <div className="block max-w-4xl p-6 bg-white border border-gray-200 rounded-lg shadow">
-        <form className="flex max-w-md flex-col gap-4">
+        <form className="flex max-w-md flex-col gap-4" onSubmit={onSubmit}>
         <div>
             <div className="mb-2 block">
             <Label
@@ -19,6 +44,7 @@ export default function LoginForm() {
             placeholder="name@email.com"
             required
             type="email"
+            onChange={(e) => setValues({ ...values, email: e.target.value })}
             />
         </div>
         <div>
@@ -32,6 +58,7 @@ export default function LoginForm() {
             id="password1"
             required
             type="password"
+            onChange={(e) => setValues({ ...values, password: e.target.value })}
             />
         </div>
         <div className="flex items-center gap-2">
@@ -47,5 +74,7 @@ export default function LoginForm() {
     </div>
   )
 }
+
+export default LoginForm;
 
 

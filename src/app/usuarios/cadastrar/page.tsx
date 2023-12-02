@@ -50,7 +50,7 @@ const Cadastrar = () => {
       });
   
       if (response.ok) {
-        router.push('/');
+        router.push('/usuarios/login');
     } else {
         // Manipule erros de resposta da API
         const data = await response.json();
