@@ -28,7 +28,11 @@ const mainPage = async () => {
             <Leiloes />
           </div>
         </section>
-        <h1>Alguns depoimentos de vencedores</h1>
+        <section className="px-28">
+          <div className="bg-purple-700 h-10 py-2">
+            <p className=" text-white pl-2">Alguns depoimentos de vencedores</p>
+          </div>
+        </section>
         <section className="flex items-center">
           <Depoimentos/>
         </section>
