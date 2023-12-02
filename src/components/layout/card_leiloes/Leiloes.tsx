@@ -31,6 +31,9 @@ export default function Leiloes() {
                     Lance
                 </a>
             </div>
+            {/* <div>
+                <user_bid/>
+            </div> */}
     </div>
 
 )}
