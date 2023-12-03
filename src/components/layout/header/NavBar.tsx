@@ -1,16 +1,28 @@
 import Logo from "../Logo";
 import ButtonHeader from "./ButtonHeader";
-import { AiOutlineLock, AiOutlineUser } from 'react-icons/ai'
+import LogoutButton from "./UserAccountnav/buttonLogicConnect";
+import{ AiOutlineLock, AiOutlineUser } from 'react-icons/ai';
+import { getServerSession } from 'next-auth';
+import { authOptions } from "@/lib/auth";
 
 
-export default function NavBar(){
+const NavBar = async () => {
+    const session = await getServerSession(authOptions);
     return(
         <nav className="bg-white border-gray-200 dark:bg-gray-900">
             <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
                 <Logo/>
+                <div>
+                {session?.user ? (
+                    <div>
+                        <LogoutButton />
+                    </div>
+                ) : (
                 <div className="flex gap-2">
-                    <ButtonHeader icone={<AiOutlineLock />} nome="Cadastre-se" url="/usuarios/cadastrar"/>
-                    <ButtonHeader icone={<AiOutlineUser />} nome="Entrar" url="/usuarios/login"/>
+                    <ButtonHeader icone={<AiOutlineLock />} nome="Cadastre-se" href="/usuarios/cadastrar" />
+                    <ButtonHeader icone={<AiOutlineUser />} nome="Entrar" href="/usuarios/login" />
+                  </div>
+                )}
                 </div>
             </div>
             
@@ -46,3 +58,5 @@ export default function NavBar(){
     )
 
 }
+
+export default NavBar;
