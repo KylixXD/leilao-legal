@@ -36,7 +36,7 @@ const LoginForm = () => {
             <div className="mb-2 block">
             <Label
                 htmlFor="email1"
-                value="Login/E-mail/CPF"
+                value="E-mail"
             />
             </div>
             <TextInput
